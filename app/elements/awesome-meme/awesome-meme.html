@@ -1,0 +1,64 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<dom-module id="awesome-meme">
+  <template>
+    <style>
+      /* TODO: add CSS */
+      :host {
+        display: block;
+        background-image: url("/images/awesome.png");
+        width: 300px;
+        height: 300px;
+        position: relative;
+      }
+      .top, .bottom{
+        position: absolute;
+        font-size: 30px;
+        font-weight: bold;
+        width: 100%;
+        text-align: center;
+      }
+      .top {
+        top: 20px;
+      }
+      .bottom {
+        bottom: 20px;
+      }
+
+    </style>
+
+    <!-- TODO: add the template's HTML content -->
+    <div class="top">{{top}}</div>
+    <div class="bottom">{{bottom}}</div>
+  </template>
+
+  <script>
+    /* TODO: create the Polymer element's definition in ES2015 */
+    class AwesomeMeme {
+      beforeRegister() {
+        this.is = 'awesome-meme';
+        this.properties = {
+          top: {
+            type: String,
+            value: ''
+          },
+          bottom: {
+            type: String,
+            value: ''
+          }
+        };
+      }
+      created() {}
+      ready() {
+        this.top = this.top.toUpperCase();
+        this.bottom = this.bottom.toUpperCase();
+      }
+      attached() {}
+      detached() {}
+      attributeChanged() {}
+    }
+
+    Polymer(AwesomeMeme);
+
+  </script>
+</dom-module>
